@@ -7,7 +7,7 @@ import { getCookie } from "./components/utils/auth";
 
 const App = () => {
   // const isLoggedIn = async () => {
-  //   const result = await 
+  //   const result = await
 
   //   return result;
   // };
@@ -20,10 +20,7 @@ const App = () => {
         <Route path="/" element={<Navigate to="/anthektikós" />} />
         <Route path="/anthektikós" element={<FullWebsite />} />
         <Route path="/Login" element={<Login />} />
-        <Route
-          path="/Admin"
-          element={getCookie()?<Admin/> :<FullWebsite />}
-        />
+        <Route path="/Admin" element={true ? <Admin /> : <FullWebsite />} />
       </Routes>
     </BrowserRouter>
   );
