@@ -22,14 +22,14 @@ const Login = () => {
 
   const handleSubmit = (e) => {
     e.preventDefault();
-    console.log("Form Data:", formData);
+    // console.log("Form Data:", formData);
   
     axios
       .post(`${baseUrl}auth/signin`, formData)
       .then((response) => {
         // Handle the login response here
         setAuthentication(response.data.token);
-        navigate('/Admin');
+        navigate('../Admin');
 
       })
       .catch((error) => {
@@ -56,15 +56,13 @@ const Login = () => {
   // }, []);
 
   return (
-    <div className="hero min-h-screen bg-base-200">
-      <div className="absolute top-2 left-4 cursor-pointer btn btn-info" onClick={haldleNavigate}>Back</div>
+    <div className="hero min-h-screen bg-base-200  ">
+      <div className="absolute top-2 z-50 left-4 cursor-pointer btn btn-info btn-sm" onClick={haldleNavigate}>Back</div>
       <div className="hero-content flex-col lg:flex-row-reverse">
         <div className="text-center lg:text-left">
-          <h1 className="text-5xl font-bold">Login now! (Only Admin)</h1>
+          <h1 className="text-5xl font-bold mt-3">Login now! (Only Admin)</h1>
           <p className="py-6">
-            Provident cupiditate voluptatem et in. Quaerat fugiat ut assumenda
-            excepturi exercitationem quasi. In deleniti eaque aut repudiandae et
-            a id nisi.
+          Every action you take today shapes the digital landscape of tomorrow. Be the architect of positive change.
           </p>
         </div>
         <div className="card flex-shrink-0 w-full max-w-sm shadow-2xl bg-base-100">

@@ -1,18 +1,24 @@
-import React from "react";
+import React, { useEffect, useState } from "react";
 import { BrowserRouter, Routes, Route, Navigate } from "react-router-dom";
 import FullWebsite from "./FULLWebsite";
 import Login from "./components/Login/Login";
 import Admin from "./components/AdminPart/Admin";
-import { getCookie } from "./components/utils/auth";
+import { isLogin } from "./components/utils/auth";
 
 const App = () => {
-  // const isLoggedIn = async () => {
-  //   const result = await
+  const [login, setLogin] = useState(false);
 
-  //   return result;
-  // };
-
-  console.log(getCookie());
+  useEffect(() => {
+    isLogin()
+      .then((result) => {
+        // Handle the fulfilled result (in this case, `result` is `true` or `false`)
+        setLogin(result);
+      })
+      .catch((error) => {
+        // Handle any errors that occurred during the Promise execution
+        setLogin(false);
+      });
+  }, []);
 
   return (
     <BrowserRouter>
@@ -20,8 +26,14 @@ const App = () => {
         <Route path="/" element={<Navigate to="/anthektikós" />} />
         <Route path="/anthektikós" element={<FullWebsite />} />
         <Route path="/Login" element={<Login />} />
-        <Route path="/Admin" element={true ? <Admin /> : <FullWebsite />} />
+        <Route path={login ? "/Admin" : "/anthektikós"} element={<Admin />} />
+
+        <Route
+          path="/*"
+          element={<h1 className="text-center mt-9 text-5xl">404 Error</h1>}
+        />
       </Routes>
+
     </BrowserRouter>
   );
 };

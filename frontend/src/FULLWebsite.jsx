@@ -20,7 +20,7 @@ const FULLWebsite = () => {
   
   };
   return (
-    <div>
+    <div className=" w-[100%] m-auto">
       <Header />
       <Hero />
       <About />

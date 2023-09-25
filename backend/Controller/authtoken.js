@@ -3,7 +3,6 @@ const jwt = require("jsonwebtoken");
 // Corrected export statement
 exports.authtoken = (req, res) => {
   const { token } = req.body;
-
   if (token) {
     try {
       const decode = jwt.verify(token, process.env.JWTKEY);

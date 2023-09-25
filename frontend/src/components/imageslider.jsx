@@ -16,7 +16,7 @@ const ImageSlider = ({ img1, img2, img3 ,interval}) => {
   }, [images]);
 
   return (
-    <div className="w-full overflow-hidden  ">
+    <div className="w-full overflow-hidden m-auto ">
       <div
         className="flex transition-transform duration-500 ease-in-out"
         style={{ transform: `translateX(-${currentIndex * 100}%)` }}

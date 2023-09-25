@@ -136,7 +136,7 @@ const skills = () => {
   
     <div className='flex  flex-col items-center justify-center pt-16 md:pt-16 ' id='Skills'>
 
-      <div className=''><h1 className='text-center text-[25px] font-bold border-solid   text-blue-300 m-10'>Skills</h1>
+      <div className=''><h1 className='text-center text-[35px] font-bold border-solid   text-blue-300 m-10'>Skills</h1>
 
         <h1 className='text-center text-[15px] font-bold border-solid   text-gray-400 p-4'>My favorite Skills</h1>
       </div>

@@ -1,7 +1,7 @@
 const UserModel = require('../Models/UserModel');
 const bcrypt = require('bcrypt');
 const jwt = require('jsonwebtoken');
-JWTKEY = "your_secret_key_here"
+// JWTKEY = "your_secret_key_here"
 
 // Register new user
 const signup = async (req, res) => {
@@ -49,8 +49,7 @@ const signin = async (req, res) => {
         const token = jwt.sign(
           { email: user.email, id: user._id },
           process.env.JWTKEY,
-          { expiresIn: "1h" }
-        );
+          { expiresIn: "1h" } );
         res.status(200).json({ user, token });
       }
     } else {
