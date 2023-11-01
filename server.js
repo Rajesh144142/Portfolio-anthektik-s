@@ -7,6 +7,7 @@ const connect = require('./db');
 const bodyParser = require('body-parser');
 const cookieParser = require('cookie-parser');
 const morgan = require('morgan');
+const path = require('path')
 require('dotenv').config();
 
 const app = express();
@@ -18,11 +19,18 @@ app.use(cookieParser());
 app.use(express.json({ limit: '20mb' }));
 app.use(bodyParser.json({ limit: '30mb', extended: true }));
 app.use(bodyParser.urlencoded({ limit: '30mb', extended: true }));
-
+///
+app.use(express.static(path.join(__dirname, './Client/build')))
 // Define your routes here
 app.post('/submit-otp', sendit.sendmessage);
 app.use('/auth', Authrouter);
 app.use('/Pro', Project);
+app.get("*", (req, res) => {
+  res.sendFile(path.join(__dirname, './Client/build/index.html'))
+});
+
+
+
 // Database calling
 const port = process.env.PORT || 5000;
 connect()
