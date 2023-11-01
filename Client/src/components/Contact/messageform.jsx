@@ -12,7 +12,7 @@ const MessageForm = () => {
     e.preventDefault();
     axios
       //.post('http://localhost:5000/submit-otp', {
-        .post('https://anthektiks.onrender.com/submit-otp', {
+        .post('/submit-otp', {
 
         name: name,
         email: email,

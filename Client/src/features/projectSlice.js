@@ -7,9 +7,10 @@ const initialState = {
     loading1: false,
     error1: null,
 };
+//${baseUrl}
 export const getAllProjects = createAsyncThunk("projects/getallProjects", async (_, { rejectWithValue }) => {
     try {
-        const response = await axios.get(`${baseUrl}pro/`);
+        const response = await axios.get(`/pro/`);
         // localStorage.setItem('projects', JSON.stringify(response.data));
         return response.data;
     } catch (error) {
@@ -18,7 +19,7 @@ export const getAllProjects = createAsyncThunk("projects/getallProjects", async 
 });
 export const insertProjects = createAsyncThunk("projects/insertProjects", async (data, { rejectWithValue }) => {
     try {
-        const response = await axios.post(`${baseUrl}pro/`, data);
+        const response = await axios.post(`/pro/`, data);
         return response.data;
     } catch (error) {
         return rejectWithValue(error.message);

@@ -67,7 +67,7 @@ const Admin = () => {
 
   const Handlelogout = () => {
     dispath(logout(user.email));
-    navigate("/anthektikós");
+    navigate("../anthektikós");
   };
   if (loading) {
     return <h1 className="text-center text-2xl font-bold ">Loading...</h1>;

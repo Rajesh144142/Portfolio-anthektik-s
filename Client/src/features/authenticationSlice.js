@@ -13,7 +13,7 @@ const initialState = {
 };
 export const login = createAsyncThunk("user/login", async (data, { rejectWithValue }) => {
     try {
-        const response = await axios.post(`${baseUrl}auth/signin`, data);
+        const response = await axios.post(`/auth/signin`, data);
         if (response.data) {
             localStorage.setItem('user', JSON.stringify(response.data.user))
             localStorage.setItem('token', JSON.stringify(response.data.token))
@@ -26,7 +26,7 @@ export const login = createAsyncThunk("user/login", async (data, { rejectWithVal
 
 export const signUp = createAsyncThunk("user/signUp", async (data, { rejectWithValue }) => {
     try {
-        const response = await axios.post(`${baseUrl}auth/signup`, data);
+        const response = await axios.post(`/auth/signup`, data);
         if (response.data) {
             localStorage.setItem('user', JSON.stringify(response.data.user))
             localStorage.setItem('token', JSON.stringify(response.data.token))
@@ -50,7 +50,7 @@ export const signUp = createAsyncThunk("user/signUp", async (data, { rejectWithV
 //         return rejectWithValue(error.message);
 //     }
 // });
-export const logout = createAsyncThunk("user/logout", async (email, { rejectWithValue }) => {
+export const logout = createAsyncThunk("/user/logout", async (email, { rejectWithValue }) => {
     try {
         const response = await axios.delete(`${baseUrl}auth/logout`, { data: { email } });
         localStorage.removeItem('user')
