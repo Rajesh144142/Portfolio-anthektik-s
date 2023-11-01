@@ -4,7 +4,7 @@ import Login from "./components/Login/Login";
 import Admin from "./components/AdminPart/Admin";
 import { useSelector } from "react-redux";
 const App = () => {
-  const { user, loading, error } = useSelector((state) => state.user);
+  const { user } = useSelector((state) => state.user);
   return (
     <Routes>
       <Route path="/" element={<Navigate to="/anthektikós" />} />

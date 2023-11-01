@@ -58,7 +58,7 @@ const Admin = () => {
       .then((response) => {
         console.log("New Project Added....");
         handleReset();
-        navigate("/Admin");
+        window.location.reload()
       })
       .catch((error) => {
         console.error("Login error:", error);
@@ -67,7 +67,6 @@ const Admin = () => {
 
   const Handlelogout = () => {
     dispath(logout(user.email));
-    navigate("../anthektikós");
   };
   if (loading) {
     return <h1 className="text-center text-2xl font-bold ">Loading...</h1>;

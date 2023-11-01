@@ -30,13 +30,12 @@ export const insertProjects = createAsyncThunk("projects/insertProjects", async 
 const authSlice = createSlice({
     name: 'projects',
     initialState,
-    reducers:{
+    reducers: {
     },
     extraReducers(builder) {
         builder
             .addCase(getAllProjects.pending, (state) => {
                 state.loading1 = true;
-
                 state.error1 = null;
             })
             .addCase(getAllProjects.fulfilled, (state, action) => {

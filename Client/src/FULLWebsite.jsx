@@ -15,9 +15,7 @@ const FULLWebsite = () => {
   const navigate = useNavigate();
 
   const handleToLoginPage = () => {
- 
-      navigate("../login");
-  
+      navigate("/login");
   };
   return (
     <div className=" w-[100%] m-auto">

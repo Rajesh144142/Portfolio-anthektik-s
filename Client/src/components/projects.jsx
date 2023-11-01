@@ -107,9 +107,9 @@ const Projects = () => {
         Projects
       </h1>
       <div className=" m-auto w-[88%]  ">
-        <Slider {...settings}>
-          {projects.map((item, id) => (
-            <div className="  w-[20rem]  p-1 rounded-xl" key="id">
+      <Slider {...settings}>
+          {projects?.map((item, id) => (
+            <div className="  w-[20rem]  p-1 rounded-xl" key={id}>
               <div className="border-2 p-3 rounded-lg  w-[98%] ">
                 <h1 className="text-center text-xl font-bold p-1 ">
                   {item.projectName}

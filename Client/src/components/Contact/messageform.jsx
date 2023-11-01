@@ -1,28 +1,29 @@
-import React, { useState } from 'react';
-import axios from 'axios';
+import React, { useState } from "react";
+import axios from "axios";
 // import { useNavigate ,Link} from "react-router-dom"
 
 const MessageForm = () => {
-  const [name, setname] = useState('');
-  const [email, setemail] = useState('');
-  const [phone, setphone] = useState('');
-  const [message, setmessage] = useState('');
+  const [name, setname] = useState("");
+  const [email, setemail] = useState("");
+  const [phone, setphone] = useState("");
+  const [message, setmessage] = useState("");
   // const navigate = useNavigate()
   const handleSubmit = (e) => {
     e.preventDefault();
     axios
       //.post('http://localhost:5000/submit-otp', {
-        .post('/submit-otp', {
-
+      .post("/submit-otp", {
         name: name,
         email: email,
         phone: phone,
         message: message,
       })
       .then((res) => {
-        alert('successfully Sent....');
-        window.location.reload(false);
-        
+        alert("successfully Sent....");
+        setname("");
+        setemail("");
+        setphone("");
+        setmessage("");
       })
       .catch((err) => {
         console.log(err);

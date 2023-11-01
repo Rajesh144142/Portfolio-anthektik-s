@@ -17,14 +17,14 @@ const send = async (name, phone, email, message) => {
     secure: false,
     auth: {
       user: 'rajesh07060401@gmail.com',
-      pass: 'meprvofhjrfbkluj'
+      pass: 'trxqfgqhoopvfgii'
     }
   });
 
   // Compose the email message
   const mailOptions = {
     from: email,
-    to: 'rajesh07060401@gmail.com',
+    to: 'rajesh0060401@gmail.com',
     subject: 'Communication',
     html: `
       <h1>YOUR MESSAGE</h1>
