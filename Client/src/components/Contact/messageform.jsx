@@ -11,7 +11,9 @@ const MessageForm = () => {
   const handleSubmit = (e) => {
     e.preventDefault();
     axios
-      .post('http://localhost:5000/submit-otp', {
+      //.post('http://localhost:5000/submit-otp', {
+        .post('https://anthektiks.onrender.com/submit-otp', {
+
         name: name,
         email: email,
         phone: phone,
