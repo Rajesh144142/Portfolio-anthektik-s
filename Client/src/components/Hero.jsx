@@ -13,9 +13,8 @@ const Hero = () => {
 
   return (
     <div className="">
-          <div className='h-12  md:h-16' id="Home" ></div>
-
-      <div className="p-4 " >
+      <div className="h-12  md:h-36 " id="Home"></div>
+      <div className="p-4 ">
         <div className="flex flex-col md:flex-row  justify-center md:justify-around  items-center m-auto w-[98%]   gap-10 md:gap-0">
           <div className=" flex justify-center  p-2">
             <div className="flex flex-col justify-start items-start ">
@@ -38,8 +37,11 @@ const Hero = () => {
                   condition="true"
                 />
               </div>
-              <div className="flex mt-5 gap-4" >
-                <button className="btn btn-outline btn-success" data-aos="fade-down">
+              <div className="flex mt-5 gap-4">
+                <button
+                  className="btn btn-outline btn-success"
+                  data-aos="fade-down"
+                >
                   <a href="https://drive.google.com/drive/folders/13SUvizcruVbHnwqlesk3aYbVh-ozb2wg?usp=sharing">
                     Resuma
                   </a>

@@ -103,6 +103,7 @@ const Admin = () => {
                         type="text"
                         name="projectName"
                         id="projectName"
+                        required
                         className="h-10 border mt-1 rounded px-4 w-full bg-gray-50"
                         value={formData.projectName}
                         onChange={handleInputChange}
@@ -112,6 +113,7 @@ const Admin = () => {
                       <label htmlFor="description">Description</label>
                       <input
                         type="text"
+                        required
                         name="description"
                         id="description"
                         className="h-10 border mt-1 rounded px-4 w-full bg-gray-50"
@@ -123,6 +125,7 @@ const Admin = () => {
                       <label htmlFor="liveLink">Live Link</label>
                       <input
                         type="text"
+                        required
                         name="liveLink"
                         id="liveLink"
                         className="h-10 border mt-1 rounded px-4 w-full bg-gray-50"
@@ -136,6 +139,7 @@ const Admin = () => {
                         type="text"
                         name="githubLink"
                         id="githubLink"
+                        required
                         className="h-10 border mt-1 rounded px-4 w-full bg-gray-50"
                         value={formData.githubLink}
                         onChange={handleInputChange}
@@ -146,6 +150,7 @@ const Admin = () => {
                         type="file"
                         name="image1"
                         className="mt-1"
+                        required
                         onChange={(e) =>
                           handleImageChange(e, setImageData1, "image1")
                         }
@@ -154,6 +159,7 @@ const Admin = () => {
                         type="file"
                         name="image2"
                         className="mt-1"
+                        required
                         onChange={(e) =>
                           handleImageChange(e, setImageData2, "image2")
                         }
@@ -162,6 +168,7 @@ const Admin = () => {
                         type="file"
                         name="image3"
                         className="mt-1"
+                        required
                         onChange={(e) =>
                           handleImageChange(e, setImageData3, "image3")
                         }
