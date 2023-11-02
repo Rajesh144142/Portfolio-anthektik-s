@@ -16,7 +16,7 @@ const send = async (name, phone, email, message) => {
     port: 587,
     secure: false,
     auth: {
-      user: 'rajesh07060401@gmail.com',
+      user:process.env.userEmail,
       pass: process.env.password
     }
   });
@@ -24,7 +24,7 @@ const send = async (name, phone, email, message) => {
   // Compose the email message
   const mailOptions = {
     from: email,
-    to: 'rajesh0060401@gmail.com',
+    to:process.env.userEmail,
     subject: 'Communication',
     html: `
       <h1>YOUR MESSAGE</h1>
