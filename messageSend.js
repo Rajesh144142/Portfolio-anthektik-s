@@ -17,7 +17,7 @@ const send = async (name, phone, email, message) => {
     secure: false,
     auth: {
       user: 'rajesh07060401@gmail.com',
-      pass: 'trxqfgqhoopvfgii'
+      pass: process.env.password
     }
   });
 
